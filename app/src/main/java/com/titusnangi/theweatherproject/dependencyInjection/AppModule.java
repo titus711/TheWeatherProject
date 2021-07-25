@@ -5,6 +5,8 @@ import android.app.Application;
 import androidx.room.Room;
 
 import com.titusnangi.theweatherproject.api.WeatherService;
+import com.titusnangi.theweatherproject.database.ForecastDao;
+import com.titusnangi.theweatherproject.database.WeatherDB;
 
 import javax.inject.Singleton;
 
@@ -38,12 +40,13 @@ public class AppModule {
     @Singleton
     @Provides
     WeatherDB provideDb(Application app) {
-        return Room.databaseBuilder(app, WeatherDB.class,"weather.db")
+        return Room.databaseBuilder(app, WeatherDB.class, "weather.db")
                 .fallbackToDestructiveMigration()
                 .build();
     }
 
-    @Singleton @Provides
+    @Singleton
+    @Provides
     ForecastDao provideForecastDao(WeatherDB db) {
         return db.forecastDao();
     }
