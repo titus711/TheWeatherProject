@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingComponent;
@@ -16,6 +15,7 @@ import com.titusnangi.theweatherproject.MainActivity;
 import com.titusnangi.theweatherproject.NavigationController;
 import com.titusnangi.theweatherproject.R;
 import com.titusnangi.theweatherproject.binding.FragmentDataBindingComponent;
+import com.titusnangi.theweatherproject.databinding.SettingsFragmentBinding;
 import com.titusnangi.theweatherproject.dependencyInjection.Injectable;
 import com.titusnangi.theweatherproject.util.AutoClearedValue;
 import com.titusnangi.theweatherproject.util.SharedPreferences;
@@ -41,7 +41,7 @@ public class SettingsFragment extends DialogFragment implements Injectable {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         SettingsFragmentBinding dataBinding = DataBindingUtil
-                .inflate(inflater, R.layout.fragment_settings, container, false,
+                .inflate(inflater, R.layout.settings_fragment, container, false,
                         dataBindingComponent);
         binding = new AutoClearedValue<>(this, dataBinding);
         return dataBinding.getRoot();
