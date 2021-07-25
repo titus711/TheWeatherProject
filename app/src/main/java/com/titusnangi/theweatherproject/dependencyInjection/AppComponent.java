@@ -2,6 +2,8 @@ package com.titusnangi.theweatherproject.dependencyInjection;
 
 import android.app.Application;
 
+import com.titusnangi.theweatherproject.WeatherApp;
+
 import javax.inject.Singleton;
 
 import dagger.BindsInstance;

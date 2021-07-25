@@ -10,6 +10,8 @@ import androidx.fragment.app.FragmentManager;
 
 import androidx.fragment.app.FragmentActivity;
 
+import com.titusnangi.theweatherproject.WeatherApp;
+
 import dagger.android.AndroidInjection;
 import dagger.android.support.AndroidSupportInjection;
 import dagger.android.support.HasSupportFragmentInjector;

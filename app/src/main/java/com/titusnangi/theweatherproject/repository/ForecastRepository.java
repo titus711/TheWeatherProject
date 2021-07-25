@@ -4,13 +4,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.LiveData;
 
+import com.titusnangi.theweatherproject.AppExecutors;
+import com.titusnangi.theweatherproject.BuildConfig;
 import com.titusnangi.theweatherproject.api.ApiResponse;
 import com.titusnangi.theweatherproject.api.WeatherService;
 import com.titusnangi.theweatherproject.database.ForecastDao;
+import com.titusnangi.theweatherproject.model.Resource;
 import com.titusnangi.theweatherproject.model.SavedDailyForecast;
 import com.titusnangi.theweatherproject.model.Uvi;
 import com.titusnangi.theweatherproject.model.UviDb;
 import com.titusnangi.theweatherproject.model.WeatherForecast;
+import com.titusnangi.theweatherproject.util.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +82,7 @@ public class ForecastRepository {
             @NonNull
             @Override
             protected LiveData<ApiResponse<WeatherForecast>> createCall() {
-                return weatherService.getWeatherForecast(city, numDays, Constants.UNIT_SYSTEM, BuildConfig.WEATHER_API_KEY);
+                return weatherService.getWeatherForecast(city, numDays, Constants.UNIT_SYSTEM, Constants.API_KEY);
             }
 
             @Override
@@ -136,7 +140,7 @@ public class ForecastRepository {
             @NonNull
             @Override
             protected LiveData<ApiResponse<WeatherForecast>> createCall() {
-                return weatherService.getWeatherForecast(city, numDays, Constants.UNIT_SYSTEM, BuildConfig.WEATHER_API_KEY);
+                return weatherService.getWeatherForecast(city, numDays, Constants.UNIT_SYSTEM, Constants.API_KEY);
             }
 
             @Override
@@ -175,7 +179,7 @@ public class ForecastRepository {
             @NonNull
             @Override
             protected LiveData<ApiResponse<Uvi>> createCall() {
-                return weatherService.getUvi(lat, lon, BuildConfig.WEATHER_API_KEY);
+                return weatherService.getUvi(lat, lon, Constants.API_KEY);
             }
 
             @Override

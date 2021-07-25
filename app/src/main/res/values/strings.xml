@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">TheWeatherProject</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Home</string>
@@ -17,4 +17,9 @@
     <string name="your_city">Your City</string>
     <string name="cancel">Cancel</string>
     <string name="ok">Ok</string>
+
+    <string name="format_temperature"><xliff:g id="temp">%1.0f</xliff:g>\u2103</string>
+    <string name="format_full_friendly_date"><xliff:g id="month">%1$s</xliff:g>, <xliff:g id="day">%2$s</xliff:g></string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="format_wind_kmh"> <xliff:g id="speed">%1$1.0f</xliff:g> km/h</string>
 </resources>

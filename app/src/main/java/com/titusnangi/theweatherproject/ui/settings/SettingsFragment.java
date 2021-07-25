@@ -1,23 +1,28 @@
 package com.titusnangi.theweatherproject.ui.settings;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.databinding.DataBindingComponent;
+import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.DialogFragment;
 
 import com.titusnangi.theweatherproject.MainActivity;
+import com.titusnangi.theweatherproject.NavigationController;
 import com.titusnangi.theweatherproject.R;
+import com.titusnangi.theweatherproject.binding.FragmentDataBindingComponent;
+import com.titusnangi.theweatherproject.dependencyInjection.Injectable;
+import com.titusnangi.theweatherproject.util.AutoClearedValue;
+import com.titusnangi.theweatherproject.util.SharedPreferences;
 
-public class SettingsFragment DialogFragment implements Injectable {
+import javax.inject.Inject;
+
+public class SettingsFragment extends DialogFragment implements Injectable {
 
 
     @Inject
@@ -36,7 +41,7 @@ public class SettingsFragment DialogFragment implements Injectable {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         SettingsFragmentBinding dataBinding = DataBindingUtil
-                .inflate(inflater, R.layout.settings_fragment, container, false,
+                .inflate(inflater, R.layout.fragment_settings, container, false,
                         dataBindingComponent);
         binding = new AutoClearedValue<>(this, dataBinding);
         return dataBinding.getRoot();
@@ -70,5 +75,5 @@ public class SettingsFragment DialogFragment implements Injectable {
         dismiss();
     }
 
-
 }
+
