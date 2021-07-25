@@ -6,4 +6,9 @@
     <string name="title_notifications">Notifications</string>
     <string name="weather_settings">Weather Settings</string>
     <string name="about">About</string>
+    <string name="uv">UV</string>
+    <string name="wind">Wind</string>
+    <string name="humidity">Humidity</string>
+    <string name="today">Today</string>
+    <string name="feels_like">Feels like</string>
 </resources>
