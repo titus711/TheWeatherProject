@@ -2,22 +2,17 @@ buildscript {
     repositories {
         maven { url 'https://maven.fabric.io/public' }
     }
-    dependencies {
-        classpath 'io.fabric.tools:gradle:1.+'
-    }
 }
 
 plugins {
     id 'com.android.application'
 }
 
-repositories {
-    maven { url 'https://zendesk.jfrog.io/zendesk/repo' }
-}
+
 
 android {
     compileSdkVersion build_versions.target_sdk
-    buildToolsVersion build_versions.build_tools
+    buildToolsVersion '29.0.2'
 
 
     defaultConfig {
@@ -46,10 +41,11 @@ android {
 }
 
 dependencies {
+
     implementation deps.support.app_compat
-    implementation deps.support.recyclerview
-    implementation deps.support.cardview
-    implementation deps.support.design
+    implementation deps.support.material
+    implementation deps.support.constraint_layout
+    implementation deps.support.vector_drawable
     implementation deps.room.runtime
     implementation deps.lifecycle.runtime
     implementation deps.lifecycle.extensions
@@ -62,7 +58,8 @@ dependencies {
     implementation deps.dagger.android_support
     implementation deps.constraint_layout
     implementation deps.timber
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
     annotationProcessor deps.dagger.android_support_compiler
     annotationProcessor deps.dagger.compiler
     annotationProcessor deps.room.compiler
@@ -70,12 +67,16 @@ dependencies {
     implementation deps.navigation.fragment
     implementation deps.navigation.ui
     implementation deps.navigation.legacy
-    implementation 'com.squareup.picasso:picasso:2.4.0'
-    implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    implementation 'androidx.lifecycle:lifecycle-extension:2.2.0'
+    // ButterKnife
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
+    // Logging interceptor
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+
+    implementation 'com.squareup.picasso:picasso:2.3.0'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 }
