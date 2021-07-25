@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.titusnangi.theweatherproject.R;
+import com.titusnangi.theweatherproject.ui.settings.SettingsFragment;
 
 public class WeeklyFragment extends Fragment {
 

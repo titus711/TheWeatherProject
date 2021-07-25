@@ -13,4 +13,11 @@
     <string name="feels_like">Feels like</string>
     <string name="share">Share</string>
     <string name="weekly">Weekly</string>
+    <string name="settings_title">Settings</string>
+    <string name="your_city">Your City</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">Ok</string>
+    <string name="titusnangi_gmail_com">titusnangi@gmail.com</string>
+    <string name="the_weather_project">The Weather Project</string>
+    <string name="nav_header">Nav Header</string>
 </resources>
