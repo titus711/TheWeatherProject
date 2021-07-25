@@ -1,10 +1,14 @@
 package com.titusnangi.theweatherproject.model;
 
+import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import com.google.gson.annotations.SerializedName;
 
-public class SavedDailyForecast {
+import java.io.Serializable;
+
+@Entity
+public class SavedDailyForecast implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private int id;
     @SerializedName("lat")
