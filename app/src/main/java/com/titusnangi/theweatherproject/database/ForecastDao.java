@@ -13,6 +13,7 @@ import java.util.List;
 
 @Dao
 public interface ForecastDao {
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertForecastList(List<SavedDailyForecast> savedDailyForecasts);
 

@@ -1,7 +1,7 @@
 package com.titusnangi.theweatherproject.util;
 
 public class Constants {
-    
+
     private Constants() {
     }
 

@@ -3,6 +3,7 @@ package com.titusnangi.theweatherproject.util;
 import android.content.Context;
 
 public class SharedPreferences {
+
     private String WEATHR_PREFERENCES = "WEATHER";
     private android.content.SharedPreferences preferences;
     private android.content.SharedPreferences.Editor editor;
@@ -39,14 +40,14 @@ public class SharedPreferences {
         editor.commit();
     }
 
-    public void putBooleanValue (String key, boolean value) {
-        editor.putBoolean(key,value);
+    public void putBooleanValue(String key, boolean value) {
+        editor.putBoolean(key, value);
         editor.commit();
     }
 
-    public void putLongValue (String key, long value) {
-        editor.putLong ( key,value );
-        editor.commit ();
+    public void putLongValue(String key, long value) {
+        editor.putLong(key, value);
+        editor.commit();
     }
 
     public String getCity() {

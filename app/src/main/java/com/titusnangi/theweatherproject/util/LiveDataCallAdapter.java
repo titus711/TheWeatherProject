@@ -14,7 +14,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LiveDataCallAdapter<R> implements CallAdapter<R, LiveData<ApiResponse<R>>> {
+
     private final Type responseType;
+
     public LiveDataCallAdapter(Type responseType) {
         this.responseType = responseType;
     }
@@ -28,6 +30,7 @@ public class LiveDataCallAdapter<R> implements CallAdapter<R, LiveData<ApiRespon
     public LiveData<ApiResponse<R>> adapt(Call<R> call) {
         return new LiveData<ApiResponse<R>>() {
             AtomicBoolean started = new AtomicBoolean(false);
+
             @Override
             protected void onActive() {
                 super.onActive();

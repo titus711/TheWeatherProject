@@ -25,41 +25,41 @@ public class AppInjector {
         DaggerAppComponent.builder().application(weatherApp)
                 .build().inject(weatherApp);
         weatherApp.registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
-                    @Override
-                    public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-                        handleActivity(activity);
-                    }
+            @Override
+            public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
+                handleActivity(activity);
+            }
 
-                    @Override
-                    public void onActivityStarted(Activity activity) {
+            @Override
+            public void onActivityStarted(Activity activity) {
 
-                    }
+            }
 
-                    @Override
-                    public void onActivityResumed(Activity activity) {
+            @Override
+            public void onActivityResumed(Activity activity) {
 
-                    }
+            }
 
-                    @Override
-                    public void onActivityPaused(Activity activity) {
+            @Override
+            public void onActivityPaused(Activity activity) {
 
-                    }
+            }
 
-                    @Override
-                    public void onActivityStopped(Activity activity) {
+            @Override
+            public void onActivityStopped(Activity activity) {
 
-                    }
+            }
 
-                    @Override
-                    public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
+            @Override
+            public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
 
-                    }
+            }
 
-                    @Override
-                    public void onActivityDestroyed(Activity activity) {
+            @Override
+            public void onActivityDestroyed(Activity activity) {
 
-                    }
-                });
+            }
+        });
     }
 
     private static void handleActivity(Activity activity) {

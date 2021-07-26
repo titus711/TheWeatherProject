@@ -13,7 +13,7 @@ import com.titusnangi.theweatherproject.model.Resource;
 
 import java.util.Objects;
 
-public abstract class NetworkBoundResource <ResultType, RequestType> {
+public abstract class NetworkBoundResource<ResultType, RequestType> {
 
     private final AppExecutors appExecutors;
 
@@ -21,6 +21,7 @@ public abstract class NetworkBoundResource <ResultType, RequestType> {
 
     @MainThread
     NetworkBoundResource(AppExecutors appExecutors) {
+
         this.appExecutors = appExecutors;
         result.setValue(Resource.loading(null));
         LiveData<ResultType> dbSource = loadFromDb();

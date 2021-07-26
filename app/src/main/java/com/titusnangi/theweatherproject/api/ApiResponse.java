@@ -15,11 +15,13 @@ import retrofit2.Response;
 import timber.log.Timber;
 
 public class ApiResponse<T> {
-    private static final Pattern LINK_PATTERN = Pattern
-            .compile("<([^>]*)>[\\s]*;[\\s]*rel=\"([a-zA-Z0-9]+)\"");
+
+    private static final Pattern LINK_PATTERN = Pattern.compile("<([^>]*)>[\\s]*;[\\s]*rel=\"([a-zA-Z0-9]+)\"");
     private static final Pattern PAGE_PATTERN = Pattern.compile("\\bpage=(\\d+)");
     private static final String NEXT_LINK = "next";
+
     public final int code;
+
     @Nullable
     public final T body;
     @Nullable
@@ -36,11 +38,13 @@ public class ApiResponse<T> {
 
     public ApiResponse(Response<T> response) {
         code = response.code();
-        if(response.isSuccessful()) {
+        if (response.isSuccessful()) {
             body = response.body();
             errorMessage = null;
         } else {
+
             String message = null;
+
             if (response.errorBody() != null) {
                 try {
                     message = response.errorBody().string();
@@ -48,17 +52,21 @@ public class ApiResponse<T> {
                     Timber.e(ignored, "error while parsing response");
                 }
             }
+
             if (message == null || message.trim().length() == 0) {
                 message = response.message();
             }
             errorMessage = message;
             body = null;
         }
+
         String linkHeader = response.headers().get("link");
+
         if (linkHeader == null) {
             links = Collections.emptyMap();
         } else {
             links = new ArrayMap<>();
+
             Matcher matcher = LINK_PATTERN.matcher(linkHeader);
 
             while (matcher.find()) {

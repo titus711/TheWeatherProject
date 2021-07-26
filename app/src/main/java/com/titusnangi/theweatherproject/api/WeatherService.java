@@ -9,6 +9,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface WeatherService {
+
     @GET("forecast/daily/")
     LiveData<ApiResponse<WeatherForecast>> getWeatherForecast(@Query("q") String city,
                                                               @Query("cnt") String numDays,

@@ -10,5 +10,7 @@ import com.titusnangi.theweatherproject.model.UviDb;
         version = 1,
         exportSchema = false)
 public abstract class WeatherDB extends RoomDatabase {
+
     abstract public ForecastDao forecastDao();
+
 }

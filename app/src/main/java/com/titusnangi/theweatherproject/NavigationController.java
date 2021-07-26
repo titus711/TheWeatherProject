@@ -10,6 +10,7 @@ import com.titusnangi.theweatherproject.ui.weekly.WeeklyFragment;
 import javax.inject.Inject;
 
 public class NavigationController {
+
     private final int containerId;
     private final FragmentManager fragmentManager;
 

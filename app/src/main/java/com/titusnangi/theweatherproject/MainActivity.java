@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements HasSupportFragmen
         BottomNavigationView navView = findViewById(R.id.nav_view);
 
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this,R.color.white)));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this, R.color.white)));
 
         drawer = findViewById(R.id.drawerLayout);
         NavigationView navigationView = findViewById(R.id.navView);
@@ -65,18 +65,18 @@ public class MainActivity extends AppCompatActivity implements HasSupportFragmen
         NavigationUI.setupWithNavController(navView, navController);
 
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
-            if(destination.getId() == R.id.navigation_share) {
+            if (destination.getId() == R.id.navigation_share) {
                 String temp = SharedPreferences.getInstance(this).getTemp();
                 String desc = SharedPreferences.getInstance(this).getDesc();
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "Today's weather is " + desc + " with temperature: " + temp );
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "Today's weather is " + desc + " with temperature: " + temp);
                 sendIntent.setType("text/plain");
 
                 if (sendIntent.resolveActivity(getPackageManager()) != null) {
                     startActivity(sendIntent);
                 }
-            } else if (destination.getId() == R.id.navigation_weekly){
+            } else if (destination.getId() == R.id.navigation_weekly) {
 
             } else if (destination.getId() == R.id.navigation_today) {
 
